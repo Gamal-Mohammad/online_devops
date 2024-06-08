@@ -53,7 +53,7 @@ pipeline {
         }
         stage('Deploy App On KuberNetes') {
             steps{
-              sh 'cd kubernetes && sudo kubectl apply -f .'
+              sh 'cd kubernetes && minikube kubectl -- apply -f .'
             }
             post {
                 success {
